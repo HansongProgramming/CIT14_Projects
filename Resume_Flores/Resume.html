@@ -40,7 +40,23 @@
       .squareLeft{
         background-color: #f39338;
       }
+      .ikot{
+        width: 35px;
+        height: 50px;
+        animation-name: spin;
+        animation-duration: 5000ms;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
 
+      @keyframes spin {
+        from{
+          transform: rotate(0deg);
+        }to{
+          transform: rotate(360deg);
+        }
+        
+      }
 
     </style>
 </head>
@@ -49,10 +65,12 @@
 
     </div>
     <div class="leftBlock">
-        <h1>Ｈａｎｓ Ｈａｒｏｌｄ Ｌ． Ｆｌｏｒｅｓ 🍑</h1>
+        <h1>Ｈａｎｓ Ｈａｒｏｌｄ Ｌ． Ｆｌｏｒｅｓ </h1>
         <h2 style="font-family: 'Courier New', Courier, monospace;">Korea-Based Junior Web Developer</h2>
         <h2>웹 기술</h2>
-    </div>
+        <h1 class="ikot"> 🍑 </h1>
+        
+      </div>
 
 
     <hr>
