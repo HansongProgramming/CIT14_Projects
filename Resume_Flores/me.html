@@ -7,8 +7,9 @@
     <style>
         .leftBlock{
             justify-content: left;
-            position: relative;
-            left: 25%;
+            position: absolute;
+            top: 38%;
+            left: 30%;
         }
 
         h1 {
@@ -23,13 +24,13 @@
         nav a {
         color: #ffffff;
         text-decoration: none;
-        font-size: 18px;
+        font-size: 60px;
         font-family: 'Courier New', Courier, monospace;
         margin-right: 20px;
       }
   
       nav a:hover {
-        color: #f39338;
+        color: rgb(255, 112, 148);
       }
 
       .left {
@@ -41,8 +42,11 @@
         background-color: #f39338;
       }
       .ikot{
-        width: 35px;
-        height: 50px;
+        position: absolute;
+        top: 20%;
+        left: 100%;
+        width: 100px;
+        height: 105px;
         animation-name: spin;
         animation-duration: 5000ms;
         animation-iteration-count: infinite;
@@ -58,34 +62,29 @@
         
       }
 
+      h2{
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+        color: azure;
+        font-size: 20px;
+      }
+
     </style>
 </head>
-<body>
+<body style="background-color: #131314;">
     <div class="squareLeft">
 
     </div>
     <div class="leftBlock">
-        <h1>Ｈａｎｓ Ｈａｒｏｌｄ Ｌ． Ｆｌｏｒｅｓ </h1>
-        <h2 style="font-family: 'Courier New', Courier, monospace;">Korea-Based Junior Web Developer</h2>
-        <h2>웹 기술</h2>
-        <h1 class="ikot"> 🍑 </h1>
-        
-      </div>
+      <h1>Ｈａｎｓ Ｈａｒｏｌｄ Ｌ． Ｆｌｏｒｅｓ </h1>
+      <h2>Korea-Based Junior Web Developer & Animator</h2>
+      <h2>웹 기술 | 애니메이터 | 영화 감독</h2>
+      <img src="https://i.redd.it/pnxs5ftn8id91.png" alt="orange" class="ikot">
+    </div>
 
-
-    <hr>
     
-
-
-    <div class="leftBlock">
-        <nav class ="left" >
-            <a href="me.html">About Me   |</a>
-            <a href="mp">My Projects   |</a>
-            <a href="ac">Academic Achievements</a>
-          </nav>
-        <pre></pre>
-    </div> 
-    <p cal>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae cum, perferendis itaque placeat odit reiciendis quibusdam non magni architecto eligendi molestiae harum enim nemo, impedit at nesciunt? Ducimus, ex voluptatibus!</p>
-
+    <nav>
+      <a href="me.html" style=" position: absolute;top: 45%;left: 72%;"> ➤ </a>
+      <a href="AcadAchievements.html" style=" position: absolute;top: 45%;left: 25.5%; rotate: -180deg;"> ➤ </a>
+    </nav>
 </body>
 </html>
