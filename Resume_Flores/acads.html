@@ -55,8 +55,38 @@
         color: rgb(255, 240, 248);
         font-family: 'Courier New', Courier, monospace;
         font-size: 18px;
-        width: 65%;
+        width: 80%;
       }
+
+      .scrollbar
+      {
+        margin-left: 30px;
+        float: left;
+        height: 150px;
+        width: 700px;
+        background: #131314;
+        overflow-y: scroll;
+        margin-bottom: 25px;
+      }
+
+      #style-4::-webkit-scrollbar-track
+      {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        background-color: #343436;
+      }
+
+      #style-4::-webkit-scrollbar
+      {
+        width: 10px;
+        background-color: rgb(255, 112, 148);
+      }
+
+      #style-4::-webkit-scrollbar-thumb
+      {
+        background-color: rgb(255, 112, 148);
+        border: 2px solid #131314
+      }
+
 
     </style>
 </head>
@@ -65,8 +95,8 @@
 
     </div>
     <div class="leftBlock">
-      <h1>업무 경험 ＷＯＲＫ ＥＸＰＥＲＩＥＮＣＥ</h1>
-      <div style="overflow-y:scroll; overflow-x:hidden; height:400px; background-color: #1f1f20;">
+      <h1>업무 경험 | 業務経験 ＷＯＲＫ ＥＸＰＥＲＩＥＮＣＥ</h1>
+      <div class="scrollbar" id="style-4" style="overflow-y:scroll; overflow-x:hidden; background-color: #1f1f20;">
         <p><font style="color: rgb(255, 112, 148);">TIME: Personal Project Feb–May 2022 <br></font>
           -	Made a film for final project in class. <br> <br>
           <font style="color: rgb(255, 112, 148);">SCROLLWRITE: Part Time Mar–May 2022 <br></font> 
@@ -81,6 +111,8 @@
             -	Made a system to display residents from a given house number. <br> <br>
             <font style="color: rgb(255, 112, 148);">O-HAKEY: Personal Project May–Aug 2023 <br></font>
             -	Created a one handed keyboard using arduino nano. <br> <br>
+            <font style="color: rgb(255, 112, 148);"> Augnina And Hans: Personal Project Aug–Jan 2024 <br></font>
+            -	Publishing a picture book about a lover named Augnina. <br> <br>
             <font style="color: rgb(255, 112, 148);"> All About Augnina: Personal Project Oct–Aug 2050 <br></font>
             -	Creating a film . <br> <br>
             </p>
