@@ -23,35 +23,40 @@
         
       }
       h1{
+        position: absolute;
+        top: 30%;
+        left: 50%;
         color: azure ;
-        font-family: 'Courier New', Courier, monospace;
+        font-family: sans-serif;
         }
+        
+        
         a{
             position: absolute;
+            top: 20%;
             left: 18%;
         }
 
-        .pop{
-            animation-name: poppers;
-            animation-duration: 3000ms;
-            animation-iteration-count: infinite;
-            animation-timing-function: ease;
+        span::before{
+            content: "hey you!";
+            animation: animate infinite 5s;
+        }
+        @keyframes animate {
+            20%{content: "";}
+            30%{content: "yes you!";}
+            50%{content: "";}
+            60%{content: "click me!";}
+            85%{content: "";}
         }
 
-        @keyframes poppers {
-            from{
-                color: aliceblue;
-            }to{
-                color: #131314;
-            }
-        }
 
     </style>
 </head>
 <body style="background-color: #131314;">
+    <h1><span></span></h1>
     <div style="position: absolute; top: 35%; left: 45%;">
-        <h1 class="pop">CLICK ME</h1>
         <a href="Resume.html"><img src="https://i.redd.it/pnxs5ftn8id91.png" alt="orange" class="ikot"></a>
     </div>
+
 </body>
 </html>
