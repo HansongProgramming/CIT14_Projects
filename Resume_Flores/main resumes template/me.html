@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hans's Skills</title>
+    <title>About Hans</title>
     <style>
+      div{
+        cursor: crosshair;
+      }
         .leftBlock{
             justify-content: left;
             position: absolute;
@@ -28,7 +31,7 @@
         font-family: 'Courier New', Courier, monospace;
         margin-right: 20px;
       }
-  
+      
       nav a:hover {
         color: rgb(255, 112, 148);      
         transform: translateX(5px);
@@ -55,62 +58,54 @@
         color: azure;
         font-family: 'Courier New', Courier, monospace;
         font-size: 18px;
-        width: 60%;
+        width: 50%;
       }
 
-      label{
-        font-family: 'Courier New', Courier, monospace;
-        color: azure;
-      }
-
-    progress {
+      .ikot{
         position: absolute;
-        left: 60%;
-        width: 500px;
-        height : 15px;
-        border: 1px solid #1f1f20;;
-        }
-    progress::-webkit-progress-bar {
-        background-color: #1f1f20;;
-        }
-    progress::-webkit-progress-value {
-        background-color: rgb(255, 112, 148);
-        }
+        left: 64.5%;
+        top: 45%;
+        width: 130px;
+        height: 85px;
+        animation: an infinite 2s;
+      }
+
+      @keyframes an {
+        0%{transform: rotate(0deg);}
+        30%{transform: rotate(15deg);}
+        60%{transform: rotate(-15deg);}
+        100%{transform: rotate(0deg);}
+
+      }
+
 
     </style>
 </head>
 <body style="background-color: #131314;">
+
     <div class="squareLeft">
 
     </div>
     <div class="leftBlock">
-        <h1>기술 | 技術 ＳＫＩＬＬＳ</h1>
-        <label for="V">VFX: </label>
-        <progress id="V" value="90" max="100"></progress> <br>
-        <label for="D">DIGITAL DESIGN: </label>
-        <progress id="D" value="80" max="100"></progress> <br>
-        <label for="A">ANIMATION:</label>
-        <progress id="A" value="95" max="100"></progress> <br>
-        <label for="C">CODING:</label>
-        <progress id="C" value="97" max="100"></progress> <br>
-        <label for="P">PITCHING:</label>
-        <progress id="P" value="89" max="100"></progress> <br>
-        <label for="P">SYSTEM ANALYSIS:</label>
-        <progress id="P" value="97" max="100"></progress> <br>
-        <label for="P">CREATIVITY:</label>
-        <progress id="P" value="95" max="100"></progress> <br>
+      <h1>나에 대해 | 私について ＡＢＯＵＴ ＭＥ:</h1>
+      <p>A highly skilled student of the University of Cordilleras. Passionate about pushing creative boundaries and delivering outstanding results.
+        </p>
+        <p> I bring a unique blend of technical prowess, artistic vision, and effective communication. 
+          With a strong attention to detail and a commitment to excellence,
+           I am eager to leverage my skills and contribute to the success of forward-thinking organizations in the industry.</p>
+          </div>
 
-    </div>
-
+          <a href="x"><img class="ikot"src="https://b.illbrown.com/cameracollection/img/camera_d9.png" alt=""></a>
     <nav>
-      <a href="Resume.html" style=" position: absolute;top: 42%;left: 72%;"> ≫ </a>
-      <a href="acads.html" style=" position: absolute;top: 42%;left: 25.5%; "> ≪ </a>
+      <a href="acads.html" style=" position: absolute;top: 42%;left: 72%;"> ≫ </a>
+      <a href="Resume.html" style=" position: absolute;top: 42%;left: 25.5%; "> ≪ </a>
     </nav>
-    <h3 style="position: absolute; top: 30%; left:30%;color: rgb(255, 112, 148); font-family: Courier, monospace;">:: 1 </h3>
+
+    <h3 style="position: absolute; top: 30%; left:30%;color: rgb(255, 112, 148); font-family: Courier, monospace;">:: 3 </h3>
     <div style="position: absolute; top: 35%; left: 30%; display: flex; flex-direction: row;">
+      <div style="background-color: rgb(92, 92, 92);  height: 2px; width: 100px; border-right: 10px solid #131314;"></div>
+      <div style="background-color: rgb(92, 92, 92);  height: 2px; width: 100px; border-right: 10px solid #131314;"></div>
       <div style="background-color: rgb(255, 112, 148);  height: 2px; width: 100px; border-right: 10px solid #131314;"></div>
-      <div style="background-color: rgb(92, 92, 92);  height: 2px; width: 100px; border-right: 10px solid #131314;"></div>
-      <div style="background-color: rgb(92, 92, 92);  height: 2px; width: 100px; border-right: 10px solid #131314;"></div>
       <div style="background-color: rgb(92, 92, 92);  height: 2px; width: 100px; border-right: 10px solid #131314;"></div>
     </div>
 </body>
