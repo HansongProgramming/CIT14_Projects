@@ -5,15 +5,141 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        body{
+    height: 100vh;
+    width: 100vw;
+    background-color: #131314;
+    margin: 0rem;
+    overflow: hidden;
+}
+
+#image-track{
+    display: flex;
+    gap: 4vmin;
+    position: absolute;
+    left: 50%;
+    top: 25%;
+    transform: translate(0%, - 50%);
+    user-select: none;
+}
+
+#image-track > .image {
+    width: 40vmin;
+    height: 56vmin;
+    object-fit: cover;
+    object-position: 100% center;
+  }
+
+  body.menu-toggled > .meta-link > span {
+    color: rgb(30, 30, 30);
+  }
+  
+  #source-link {
+    bottom: 60px;
+  }
+  
+  #source-link > i {
+    color: rgb(94, 106, 210);
+  }
+  
+  #yt-link > i {
+    color: rgb(239, 83, 80);
+  }
+  
+  .meta-link {
+    align-items: center;
+    backdrop-filter: blur(3px);
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    bottom: 10px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;  
+    display: inline-flex;
+    gap: 5px;
+    left: 10px;
+    padding: 10px 20px;
+    position: fixed;
+    text-decoration: none;
+    transition: background-color 400ms, border-color 400ms;
+    z-index: 10000;
+  }
+  
+  .meta-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .meta-link > i, .meta-link > span {
+    height: 20px;
+    line-height: 20px;
+  }
+  
+  .meta-link > span {
+    color: white;
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+  }
+    </style>
 </head>
 <body>
+    <script></script>
     <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
-        <img class="image" src="D:\UC_2ndYear\CIT14\HTML\364170845_275268561917591_2104891746023655372_n.jpg" draggable="false" />
-        <img class="image" src="D:\UC_2ndYear\CIT14\HTML\364179247_275269131917534_7395939218702482409_n.jpg" draggable="false" />
-        <img class="image" src="D:\UC_2ndYear\CIT14\HTML\364212040_275259195251861_4534458117218781573_n.jpg" draggable="false" />
-        <img class="image" src="D:\UC_2ndYear\CIT14\HTML\364212428_275253935252387_6332284438399825832_n.jpg" draggable="false" />
-        <img class="image" src="D:\UC_2ndYear\CIT14\HTML\364215009_275268875250893_8532941961364059579_n.jpg" draggable="false" />
-        <script type="text/javascript" src="D:\UC_2ndYear\CIT14\JAVASCRIPT\script.js"></script>  
+        <img class="image" src="" draggable="false" />
+        <img class="image" src="" draggable="false" />
+        <img class="image" src="" draggable="false" />
+        <img class="image" src="" draggable="false" />
+        <img class="image" src="" draggable="false" />
+        <img class="image" src="" draggable="false" />
+        <img class="image" src="" draggable="false" />
+        <img class="image" src="" draggable="false" />
+        <script>const track = document.getElementById("image-track");
+
+            const handleOnDown = e => track.dataset.mouseDownAt = e.clientX;
+            
+            const handleOnUp = () => {
+              track.dataset.mouseDownAt = "0";  
+              track.dataset.prevPercentage = track.dataset.percentage;
+            }
+            
+            const handleOnMove = e => {
+              if(track.dataset.mouseDownAt === "0") return;
+              
+              const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
+                    maxDelta = window.innerWidth / 2;
+              
+              const percentage = (mouseDelta / maxDelta) * -100,
+                    nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage,
+                    nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
+              
+              track.dataset.percentage = nextPercentage;
+              
+              track.animate({
+                transform: `translate(${nextPercentage}%, -0%)`
+              }, { duration: 1200, fill: "forwards" });
+              
+              for(const image of track.getElementsByClassName("image")) {
+                image.animate({
+                  objectPosition: `${100 + nextPercentage}% center`
+                }, { duration: 1200, fill: "forwards" });
+              }
+            }
+            
+            /* -- Had to add extra lines for touch events -- */
+            
+            window.onmousedown = e => handleOnDown(e);
+            
+            window.ontouchstart = e => handleOnDown(e.touches[0]);
+            
+            window.onmouseup = e => handleOnUp(e);
+            
+            window.ontouchend = e => handleOnUp(e.touches[0]);
+            
+            window.onmousemove = e => handleOnMove(e);
+            
+            window.ontouchmove = e => handleOnMove(e.touches[0]);</script>  
     </div>
 </body>
 </html>
