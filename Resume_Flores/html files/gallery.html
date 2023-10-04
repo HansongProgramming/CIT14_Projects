@@ -82,10 +82,18 @@
     font-family: "Rubik", sans-serif;
     font-weight: 500;
   }
+
+  
+  #follow {
+  position: absolute;
+  text-align: center;
+}
     </style>
 </head>
 <body>
-    <script></script>
+    <h1 style="position: absolute; top: 15%; left: 35%; color: rgb(255, 112, 148); font-family: 'Courier New', Courier, monospace;"> 
+      DRAG THE SCREEN LEFT - RIGHT
+    </h1>
     <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
         <img class="image" src="" draggable="false" />
         <img class="image" src="" draggable="false" />
@@ -95,7 +103,10 @@
         <img class="image" src="" draggable="false" />
         <img class="image" src="" draggable="false" />
         <img class="image" src="" draggable="false" />
+
+    </div>
         <script>const track = document.getElementById("image-track");
+
 
             const handleOnDown = e => track.dataset.mouseDownAt = e.clientX;
             
