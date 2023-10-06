@@ -22,10 +22,16 @@ font-family: 'Courier New', Courier, monospace;
 margin-right: 20px;
 }
 
-nav a:hover {
-color: rgb(255, 112, 148);      
-transform: translateX(5px);
-transition: 0.5s;  
+#leftButton:hover{
+  color: rgb(255, 112, 148);
+  transform: translate(-5px);
+  transition: 0.75;
+}
+
+#rightButton:hover{
+  color: rgb(255, 112, 148);
+  transform: translate(5px);
+  transition: 0.75;
 }
 
 
