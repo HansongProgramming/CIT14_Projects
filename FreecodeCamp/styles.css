@@ -2,8 +2,11 @@ h1,h2,p{
     text-align: center;
 }
 body{
-    background-color: burlywood;
+    background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
 }
-#menu{
-    width: 300px;
+.menu{
+    width: 80%;
+    background-color: burlywood;
+    margin-left: auto;
+    margin-right: auto;
 }
