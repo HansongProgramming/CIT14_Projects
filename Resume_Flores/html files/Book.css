@@ -52,6 +52,7 @@ body {
 
 .back {
     z-index: 0;
+    justify-content: center;
 }
 
 .front-content,
