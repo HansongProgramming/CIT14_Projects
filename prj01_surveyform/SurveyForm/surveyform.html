@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container"></div>
+    <header>
+        <h1 id="title">Hans' Survey Form</h1>
+        <p id="description">Thank you for answering my short survey</p>
+    </header>
+    <form id="survey-form">
+
+        <div>
+            <label for="name-label">
+                Name:
+                <input name="name-label" type="text" id="name" placeholder="Enter Your Name" required>
+            </label>
+        </div>
+
+        <div>
+            <label for="email-label">
+                Email:
+                <input type="email" name="email-label" id="email" placeholder="Enter your email" required>
+            </label>
+        </div>
+
+        <div>
+            <label for="number-label">
+                Years Progamming:
+                <input name="number-label" id="number" type="number" placeholder="Years of Programming?" min="1" max="100" >
+            </label>
+        </div>        
+
+        <div>
+            <p>Where do you usually code?</p>
+            <select name="role" id="dropdown" required>
+                <option value="vs">VsCode</option>
+                <option value="jb">JetBrains</option>
+                <option value="ec">Eclipse</option>
+            </select>
+        </div>
+        <div>
+            <p>Will you recommend this IDE to others??</p>
+            <label>
+                Definitely
+                <input type="radio" name="UserR" value="Yes">
+            </label>
+            <label>
+                Not at all
+                <input type="radio" name="UserR" value="No">
+            </label>
+            <label>
+                Not sure
+                <input type="radio" name="UserR" value="Maybe">
+            </label>
+        </div>
+
+        <div>
+            <p>What best describes your niche in programming?</p>
+            <label for="Front-End">Front-End
+                <input type="checkbox" name="userPref" id="Front-End">
+            </label>
+            <label for="Back-End">Back-End
+                <input type="checkbox" name="userPref" id="Back-End">
+            </label>
+            <label for="Network-End">Networks
+                <input type="checkbox" name="userPref" id="Network-End">
+            </label>
+            <label for="DA-End">Data Analysis
+                <input type="checkbox" name="userPref" id="DA-End">
+            </label>
+
+        </div>
+        <div>
+            <p>Any Comments or suggestions?</p>
+            <textarea name="textarea" id="comments" cols="30" rows="10"
+            placeholder="Enter Comments here..."></textarea>
+        </div>
+
+        <div>
+            <button type="submit">SUBMIT</button>
+        </div>
+    </form>
+</body>
+</html>
