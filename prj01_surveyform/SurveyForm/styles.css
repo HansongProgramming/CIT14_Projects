@@ -1,3 +1,13 @@
 .container{
-    margin: 0 auto;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+h1{
+    font-size: 60px;
+}
+
+input{
+    margin: 10px;
 }

@@ -7,29 +7,26 @@
 </head>
 
 <body>
-    <div class="container"></div>
-    <header>
+    <div class="container">
         <h1 id="title">Hans' Survey Form</h1>
         <p id="description">Thank you for answering my short survey</p>
-    </header>
     <form id="survey-form">
-
         <div>
-            <label for="name-label">
+            <label id="name-label">
                 Name:
                 <input name="name-label" type="text" id="name" placeholder="Enter Your Name" required>
             </label>
         </div>
 
         <div>
-            <label for="email-label">
+            <label id="email-label">
                 Email:
                 <input type="email" name="email-label" id="email" placeholder="Enter your email" required>
             </label>
         </div>
 
         <div>
-            <label for="number-label">
+            <label id="number-label">
                 Years Progamming:
                 <input name="number-label" id="number" type="number" placeholder="Years of Programming?" min="1" max="100" >
             </label>
@@ -62,16 +59,16 @@
         <div>
             <p>What best describes your niche in programming?</p>
             <label for="Front-End">Front-End
-                <input type="checkbox" name="userPref" id="Front-End">
+                <input type="checkbox" name="userPref" id="Front-End" value="1">
             </label>
             <label for="Back-End">Back-End
-                <input type="checkbox" name="userPref" id="Back-End">
+                <input type="checkbox" name="userPref" id="Back-End" value="1">
             </label>
             <label for="Network-End">Networks
-                <input type="checkbox" name="userPref" id="Network-End">
+                <input type="checkbox" name="userPref" id="Network-End" value="1">
             </label>
             <label for="DA-End">Data Analysis
-                <input type="checkbox" name="userPref" id="DA-End">
+                <input type="checkbox" name="userPref" id="DA-End" value="1">
             </label>
 
         </div>
@@ -82,8 +79,9 @@
         </div>
 
         <div>
-            <button type="submit">SUBMIT</button>
+            <button type="submit" id="submit">SUBMIT</button>
         </div>
     </form>
+</div>
 </body>
 </html>
