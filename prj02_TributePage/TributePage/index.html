@@ -1,21 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="styles/styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+
+#image-track{
+    display: flex;
+    gap: 4vmin;
+    position: absolute;
+    left: 50%;
+    top: 15%;
+    transform: translate(0%, - 50%);
+    user-select: none;
+}
+
+#image-track > .image {
+    width: 40vmin;
+    height: 56vmin;
+    object-fit: cover;
+    object-position: 100% center;
+  }
+
+  body.menu-toggled > .meta-link > span {
+    color: rgb(30, 30, 30);
+  }
+  
+  #source-link {
+    bottom: 60px;
+  }
+  
+  #source-link > i {
+    color: rgb(94, 106, 210);
+  }
+  
+  #yt-link > i {
+    color: rgb(239, 83, 80);
+  }
+  
+  .meta-link {
+    align-items: center;
+    backdrop-filter: blur(3px);
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    bottom: 10px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;  
+    display: inline-flex;
+    gap: 5px;
+    left: 10px;
+    padding: 10px 20px;
+    position: fixed;
+    text-decoration: none;
+    transition: background-color 400ms, border-color 400ms;
+    z-index: 10000;
+  }
+  
+  .meta-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .meta-link > i, .meta-link > span {
+    height: 20px;
+    line-height: 20px;
+  }
+  
+  .meta-link > span {
+    color: white;
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+  }
+
+  
+  #follow {
+  position: absolute;
+  text-align: center;
+}
+    .image {
+            position: relative;
+        }
+
+    .caption {
+        position: absolute;
+        color: white;
+        padding: 5px;
+        font-size: 25px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        text-shadow: 1px 1.5px black ;
+      }
+    img{
+      object-fit: cover;
+      width: 415px;
+      height: 530px;
+    }
+    </style>
 </head>
-<body>
-    <main id="main">
-        <h1 id="title">Ms. Reburiano Augnina</h1>
-        <div id="img-div" style="justify-content: center;">
-            <img id="image" src="" alt="" style="display: block;max-width: 100%; height: auto;">
-            <figcaption id="img-caption">A picture of my dearest augnina</figcaption>
-        </div>
-        <div id="tribute-info">
-            <a href="" id="tribute-link" target="_blank"></a>
-            <p>NOT AN AVERAGE WOMAN nor just SOMEONE but only the ONE capable of keeping up with the demanding pace of Flores Hans Harld lee</p>
-        </div>
-    </main>
+<body id="jobEx">
+  <h1 style="color: rgb(255, 112, 148); font-family: 'IMPACT'; letter-spacing: 10px;"> 
+      A TRIBUTE TO AUGNINA KRIZEL REBURIANO:
+  </h1>
+          <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
+            <div class="image">
+              <img src="imgs/1.png" draggable="false" />
+              <div class="caption" style="width: 150px; top: 25%; left: 5%;">
+                <p>Augnina, a complex mixture of both beauty and chaos</p>
+              </div>
+          </div>
+          <div class="image">
+              <img src="imgs/2.png" draggable="false" />
+              <div class="caption" style="width: 150px; top: 65%; left: 55%;">She's a film, but not like any other film</div>
+          </div>
+          <div class="image">
+              <img src="imgs/3.png" draggable="false" />
+              <div class="caption" style="top: 30%; left: 20%;">To find her is simple.</div>
+          </div>
+          <div class="image">
+              <img src="imgs/4.png" draggable="false" />
+              <div class="caption" style="top: 5%;">You just have to find me</div>
+          </div>
+          <div class="image">
+              <img src="imgs/5.png" draggable="false" />
+              <div class="caption" style=" width: 90px; top:40%; left: 25%;">And she will be there</div>
+          </div>
+          <div class="image">
+              <img src="imgs/6.png" draggable="false" />
+              <div class="caption" style="top: 80%; left: 5%;">She will be there</div>
+          </div>
+          <div class="image">
+              <img src="imgs/7.png" draggable="false" />
+              <div class="caption" style="top: 50%; left: 10%;">She will always, be there</div>
+          </div>
+ 
+        <script>const track = document.getElementById("image-track");
+            const handleOnDown = e => track.dataset.mouseDownAt = e.clientX;
+            
+            const handleOnUp = () => {
+              track.dataset.mouseDownAt = "0";  
+              track.dataset.prevPercentage = track.dataset.percentage;
+            }
+            
+            const handleOnMove = e => {
+              if(track.dataset.mouseDownAt === "0") return;
+              
+              const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
+                    maxDelta = window.innerWidth / 2;
+              
+              const percentage = (mouseDelta / maxDelta) * -100,
+                    nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage,
+                    nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
+              
+              track.dataset.percentage = nextPercentage;
+              
+              track.animate({
+                transform: `translate(${nextPercentage}%, -0%)`
+              }, { duration: 1200, fill: "forwards" });
+              
+              for(const image of track.getElementsByClassName("image")) {
+                image.animate({
+                  objectPosition: `${100 + nextPercentage}% center`
+                }, { duration: 1200, fill: "forwards" });
+              }
+            }
+            window.onmousedown = e => handleOnDown(e);
+            window.ontouchstart = e => handleOnDown(e.touches[0]);
+            window.onmouseup = e => handleOnUp(e);
+            window.ontouchend = e => handleOnUp(e.touches[0]);
+            window.onmousemove = e => handleOnMove(e);
+            window.ontouchmove = e => handleOnMove(e.touches[0]);</script>  
+    </div>
+      <pre style="position: absolute; top: 70%; font-size: 20px;">
+        Augnina, is not a typical woman, 
+        I often think of her as a film. 
+        One with unpredictability, with joy,
+        sorrow, hope, dread, anguish, and solitude.
+
+        On another day, i'd think of her as a daisy,
+        symbolizing change, joy, and new beginnings.
+        She's my daisy, strangely found;
+        in the field of roses.
+      </pre>
 </body>
 </html>

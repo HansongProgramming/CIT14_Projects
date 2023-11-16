@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body style="display:flex;">
     <header id="header" style="position: fixed;width: 100%;top: 0;left: 0;">
-        <img id="header-img" src="" alt="">
+        <h1>MINIMATOOLS</h1>
+        <h3>By: Hans Flores</h3>
+        <img id="header-img" src="imgs/1.png" alt="MINIMATOOLS" draggable="false">
         <nav id="nav-bar" style="display: flex;">
             <a href="#products" class="nav-link"></a>
             <a href="#description" class="nav-link"></a>
@@ -16,19 +18,54 @@
         </nav>
     </header>
 
-    <section id="products"></section>
-    <section id="description"></section>
-    <section id="prices"></section>
+    <section id="products">
+        <div class="boxes">
+            <h1>Minimatools Overview:</h1>
+            <pre>
+            Minimatools is a Clip Studio Paint
+            Extension with the goal of 
+            simplifying workflows, by 
+            integrating an on screen shortcut
+            manager, efficiently cutting 
+            the time to memorize and manually
+            reach for utilities across 
+            the screen by half
+            </pre>    
+        </div>
+    </section>
+    <section id="description">
+        <div class="boxes">
+            <h1>Minimatools description:</h1>
+            <pre>
+            Created on the 7th of December 2022 
+            By Flores Hans, Who suddenly got 
+            irritated with having to press 
+            buttons from accross the screen.
+            Allowing the erection of the
+            small widget called 
+            MINIMATOOLS.
+            </pre>    
+        </div>
+    </section>
+    <section id="prices">
+        <div class="boxes">
+        <h1>Minimatools Price:</h1>
+        <pre>
+        Minimatools is a free and
+        open source Extension for
+        Clip Studio Paint.
+        However, you can donate 
+        through: PAYPAL.
+        </pre>    
+        </div>
+    </section>
     <video src="" id="video"></video>
 
-    <form action="https://www.freecodecamp.com/email-submit" id="form">
-        <input type="email" id="email" placeholder="Enter email:" name="email">
-        <input type="submit" name="" id="submit">
-    </form>
-
-    <video  controls />
-    <source src="https://youtu.be/sn3CHauUbQ0" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+    <div class="entry">
+        <form action="https://www.freecodecamp.com/email-submit" id="form">
+            <input type="email" id="email" placeholder="Enter email:" name="email">
+            <input type="submit" name="" id="submit">
+        </form>            
+    </div>
 </body>
 </html>
