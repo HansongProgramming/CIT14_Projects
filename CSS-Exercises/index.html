@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script>
+        $(function() {
+           $("#flex").load("flex.html");
+           $("#float").load("float.html");
+           $("#grid").load("grid.html");
+           $("#complex").load("complex.html");
+           $("#card").load("card.html");
+        });
+     </script>
+</head>
+<body style=" overflow-x: hidden;">
+    <h1 style="margin-left: 100px;">PRESS A / D to move</h1>
+    <img src="img/dog.gif" alt="" style="width: 200px; position: absolute; top: 75%;" id="dog">
+    <div id="flex" style="margin-right: 400px; margin-left: 2000px;"></div>
+    <div id="float" style="margin-right: 400px;"></div>
+    <div id="grid" style="margin-right: 400px;"></div>
+    <div id="complex" style="margin-right: 400px;"></div>
+    <div id="card" style="margin-right: 400px;"></div>
+    <h1>THANK YOU FOR YOUR TIME</h1>
+    <script>
+        document.addEventListener('keydown', function(event) {
+            if (event.keyCode === 39 || event.key === 'd') {
+                document.documentElement.scrollLeft += 20;
+            }
+            if (event.keyCode === 37 || event.key === 'a'){
+                document.documentElement.scrollLeft -= 20;
+            }
+            // Center the dog image after each scroll event
+            centerDogImage();
+        });
+    
+        // Function to center the dog image
+        function centerDogImage() {
+            var dogImage = document.getElementById("dog");
+            var scrollLeft = document.documentElement.scrollLeft;
+            var viewportWidth = window.innerWidth;
+            var dogWidth = dogImage.clientWidth;
+    
+            var newLeft = (viewportWidth - dogWidth) / 2 + scrollLeft;
+            dogImage.style.left = newLeft + "px";
+        }
+    
+        // Call the centerDogImage function on page load
+        window.addEventListener('load', centerDogImage);
+    </script>
+</body>
+</html>
